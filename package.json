@@ -1,6 +1,6 @@
 {
   "name": "pure-swap",
-  "version": "2.1.12",
+  "version": "1.0.0",
   "description": "Pure function to swap the position of two elements in the array",
   "main": "index.js",
   "scripts": {
@@ -11,12 +11,8 @@
   "repository": "alferov/pure-swap",
   "keywords": [
     "array",
-    "list",
-    "pointer",
-    "parent",
-    "tree",
-    "navigation",
-    "nested"
+    "swap",
+    "elements"
   ],
   "devDependencies": {
     "json": "^9.0.3",
