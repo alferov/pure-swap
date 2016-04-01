@@ -11,7 +11,7 @@ $ npm install pure-swap --save
 ## Usage
 ```js
 
-var pureSwap = require('pureSwap');
+var pureSwap = require('pure-swap');
 var array = [1,2,3,4];
 pureSwap(array, 1, 3); // => [1,4,3,2]
 pureSwap(array, 3, 1); // => [1,4,3,2]
