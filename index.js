@@ -10,7 +10,7 @@ var isNumeric = function (obj) {
 
 /**
  * pureSwap
- * Pure function to swap the position of two elements in the array
+ * A pure function to swap the position of two elements in the array
  *
  * @name pureSwap
  * @function

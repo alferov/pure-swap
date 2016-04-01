@@ -1,9 +1,7 @@
 # pure-swap
 [![Build Status][travis-image]][travis-url] [![Dependency Status][depstat-image]][depstat-url]
 
-> Pure function to swap the position of two elements in the array
-
-Note: It doesn't modify passed array.
+> A pure function to swap the position of two elements in the array
 
 ## Installation
 ```
@@ -24,7 +22,7 @@ console.log(array) // => [1,2,3,4]
 ```
 ## API
 ### `pureSwap(data, indexToSwap, indexToBeSwapped)`
-Pure function to swap the position of two elements in the array
+A pure function to swap the position of two elements in the array
 
 #### Parameters
 - **Array** `array`: An array of data
