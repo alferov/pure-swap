@@ -1,7 +1,11 @@
 'use strict';
 
 var isUndefined = function (obj) {
-  return typeof obj === 'undefined';
+  return typeof obj === 'undefined' || obj === null;
+};
+
+var isNumeric = function (obj) {
+  return !isNaN(parseFloat(obj)) && isFinite(obj);
 };
 
 /**
@@ -19,9 +23,16 @@ var isUndefined = function (obj) {
  */
 
 module.exports = function pureSwap (array, indexToSwap, indexToBeSwapped) {
+  if (!Array.isArray(array)) {
+    throw new TypeError('Expected an object but got an invalid argument');
+  }
 
   if (isUndefined(indexToSwap) || isUndefined(indexToBeSwapped)) {
     return array;
+  }
+
+  if (!isNumeric(indexToSwap) || !isNumeric(indexToBeSwapped)) {
+    throw new TypeError('Expected a number but got an invalid argument');
   }
 
   if (indexToBeSwapped < indexToSwap) {

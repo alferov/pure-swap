@@ -28,6 +28,14 @@ describe('pure-swap', function() {
   describe('with invalid arguments', function() {
     it('returns the same array if there are no other arguments', function() {
       expect(pureSwap([])).to.be.deep.equal([]);
+      expect(pureSwap([], null, null)).to.be.deep.equal([]);
+    });
+
+    it('throws an error if wrong arguments passed', function() {
+      expect(pureSwap.bind(null, 'string'))
+        .to.throw(/invalid argument/);
+      expect(pureSwap.bind(null, [], 'hello', 'world'))
+        .to.throw(/invalid argument/);
     });
   });
 
