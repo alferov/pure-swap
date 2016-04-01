@@ -8,6 +8,10 @@ var isNumeric = function (obj) {
   return !isNaN(parseFloat(obj)) && isFinite(obj);
 };
 
+var isPositiveNumber = function (obj) {
+  return isNumeric(obj) && obj >= 0;
+};
+
 /**
  * pureSwap
  * A pure function to swap the position of two elements in the array
@@ -31,8 +35,8 @@ module.exports = function pureSwap (array, indexToSwap, indexToBeSwapped) {
     return array;
   }
 
-  if (!isNumeric(indexToSwap) || !isNumeric(indexToBeSwapped)) {
-    throw new TypeError('Expected a number but got an invalid argument');
+  if (!isPositiveNumber(indexToSwap) || !isPositiveNumber(indexToBeSwapped)) {
+    throw new TypeError('Expected a number >= 0 but got an invalid argument');
   }
 
   if (indexToBeSwapped < indexToSwap) {
