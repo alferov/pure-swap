@@ -11,18 +11,22 @@ var result;
 describe('pure-swap', function() {
   describe('with valid arguments', function() {
 
-    beforeEach(function() {
-      result = pureSwap(initial, indexToSwap, indexToBeSwapped);
-    });
-
     it('does not modify passed object', function() {
+      result = pureSwap(initial, indexToSwap, indexToBeSwapped);
       expect(initial).to.be.deep.equal(initial);
     });
 
     it('returns an expected value', function() {
+      result = pureSwap(initial, indexToSwap, indexToBeSwapped);
       expect(result).to.be.deep.equal(expected);
       expect(result).to.be.an('array');
     });
+  });
+
+  it('returns an expected value if indexToBeSwapped > indexToSwap', function() {
+    result = pureSwap(initial, indexToBeSwapped, indexToSwap);
+    expect(result).to.be.deep.equal(expected);
+    expect(result).to.be.an('array');
   });
 
   describe('with invalid arguments', function() {
