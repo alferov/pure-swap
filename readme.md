@@ -9,11 +9,11 @@ $ npm install pure-swap --save
 ```
 
 ## Browser support
-IE 9+
-Chrome 5+
-Opera 10.5+
-Safari 5+
-FireFox 4+
+- IE 9+
+- Chrome 5+
+- Opera 10.5+
+- Safari 5+
+- FireFox 4+
 
 ## Usage
 ```js
