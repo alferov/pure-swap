@@ -1,6 +1,6 @@
 {
   "name": "pure-swap",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Pure function to swap the position of two elements in the array",
   "main": "index.js",
   "scripts": {
