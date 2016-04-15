@@ -4,8 +4,8 @@ var isUndefined = function (obj) {
   return typeof obj === 'undefined' || obj === null;
 };
 
-var isNumeric = function (obj) {
-  return !isNaN(parseFloat(obj)) && isFinite(obj);
+var isInteger = function (obj) {
+  return obj % 1 === 0;
 };
 
 /**
@@ -31,21 +31,18 @@ module.exports = function pureSwap (array, indexToSwap, indexToBeSwapped) {
     return array;
   }
 
-  if (!isNumeric(indexToSwap) || !isNumeric(indexToBeSwapped)) {
+  if (!isInteger(indexToSwap) || !isInteger(indexToBeSwapped)) {
     throw new TypeError('Expected a number but got an invalid argument');
   }
 
-  if (indexToBeSwapped < indexToSwap) {
-    var tmp = indexToBeSwapped;
-    indexToBeSwapped = indexToSwap;
-    indexToSwap = tmp;
-  }
+  var max = Math.max(indexToSwap, indexToBeSwapped);
+  var min = Math.min(indexToSwap, indexToBeSwapped);
 
   return Array.prototype.concat.call(
-    array.slice(null, indexToSwap),
-    array[indexToBeSwapped],
-    array.slice(indexToSwap + 1, indexToBeSwapped),
-    array[indexToSwap],
-    array.slice(indexToBeSwapped + 1)
+    array.slice(null, min),
+    array[max],
+    array.slice(min + 1, max),
+    array[min],
+    array.length > max ? array.slice(max + 1) : []
   );
 };

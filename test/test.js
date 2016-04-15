@@ -42,5 +42,4 @@ describe('pure-swap', function() {
         .to.throw(/invalid argument/);
     });
   });
-
 });
