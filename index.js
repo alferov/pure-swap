@@ -8,6 +8,18 @@ var isInteger = function (obj) {
   return obj % 1 === 0;
 };
 
+var isNatural = function (obj) {
+  return obj >= 0;
+};
+
+var every = function (f, g) {
+  return function (x) {
+    return f.call(null, x) && g.call(null, x);
+  };
+};
+
+var isNaturalInteger = every(isNatural, isInteger);
+
 /**
  * pureSwap
  * A pure function to swap the position of two elements in the array
@@ -31,7 +43,7 @@ module.exports = function pureSwap (array, indexToSwap, indexToBeSwapped) {
     return array;
   }
 
-  if (!isInteger(indexToSwap) || !isInteger(indexToBeSwapped)) {
+  if (!isNaturalInteger(indexToSwap) || !isNaturalInteger(indexToBeSwapped)) {
     throw new TypeError('Expected a number but got an invalid argument');
   }
 
